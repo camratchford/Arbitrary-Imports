@@ -1,0 +1,44 @@
+[project]
+name = 'arbitrary-imports'
+description = 'Utility class for string-based importing, executing, and validating arguments for Python functions in a given path.'
+authors = [
+    {name = 'Cam Ratchford', email = 'camratchford@gmail.com'},
+]
+
+classifiers = [
+    'Development Status :: 1 - Testing required',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3 :: Only',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: System Administrators',
+    'Operating System :: Windows :: Windows',
+    'Environment :: Console',
+    'Environment :: Windows',
+    'Environment :: MacOS X',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: Internet',
+]
+version = "1.0.0"
+requires-python = '>=3.7'
+dependencies = [
+    "annotated-types",
+    "pydantic",
+    "pydantic-core",
+    "typing-extensions",
+]
+#testing = [
+#    "iniconfig",
+#    "colorama",
+#    "pytest",
+#    "tomli",
+#    "pluggy",
+#    "exceptiongroup",
+#    "packaging",
+#]
+
+
+[project.urls]
+Homepage = 'https://github.com/camratchford/arbitrary-imports'
+Source = 'https://github.com/camratchford/arbitrary-imports'
+
