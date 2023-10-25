@@ -24,7 +24,6 @@ def get_arg_defs(function):
     Parse the function spec and produce the required argument types
     """
     signatures = str(signature(function)).strip("()").split(",")
-    print(signatures)
     type_map = {
         "str": str,
         "int": int,

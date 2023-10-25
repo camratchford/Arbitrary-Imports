@@ -72,15 +72,15 @@ class ArbitraryImporter(object):
         Passes the returned value of the executed function.
         """
         mod_func = self.modules .get(module).get(function)
-        arg_def_dict, arg_dict, result_model = self.get_function_validations(mod_func, arg)
-        validation = result_model(**arg_dict)
+        func_kwargs, arg_def_dict, result_model = self.get_function_validations(mod_func, arg)
+        validation = result_model(**func_kwargs)
 
         if validation:
-            result = mod_func(**arg_dict)
+            result = mod_func(**func_kwargs)
         else:
-            raise ValueError(f"Args: {arg_dict} does not match arg type defs {arg_def_dict}")
+            raise ValueError(f"Args: {func_kwargs} does not match arg type defs {arg_def_dict}")
 
-        return {"results": str(result)}
+        return {"results": result}
 
     def load_modules_from_dir(self):
         """
@@ -116,7 +116,7 @@ class ArbitraryImporter(object):
         # Generate a Pydantic model based on the argument type requirements of the given function
         result_model = get_arg_model(arg_def_dict)
 
-        return arg_def_dict, func_kwargs, result_model
+        return func_kwargs, arg_def_dict, result_model
 
     def get_module(self, module_name: str):
         """
